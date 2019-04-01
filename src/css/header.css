@@ -1,0 +1,38 @@
+.header{
+    background-color: #795548;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top:0;
+    z-index: 100;
+    width: 100%;
+}
+header button{
+    height: 30px;
+    border: none;
+    background-color: #795548;
+    color: white;
+    border-radius: 5px;
+    margin: 10px 10px 10px 0px;
+}
+
+header button:hover{
+    color: black;
+}
+
+
+header input{
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    margin: 10px 10px 10px 10px;
+}
+
+.gap{
+    width: 20%;
+}
+.links{
+    flex-grow: 1;
+    overflow: hidden;
+}

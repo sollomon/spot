@@ -1,0 +1,40 @@
+.contact:focus{
+    color: red;
+}
+.text{
+    height: 30px;
+    width: auto;
+    border-radius: 15px;
+    background-color: #795548;
+    border: none;
+    outline: none;
+}
+.text1{
+    height: 30px;
+    width: auto;
+    border-radius: 15px;
+    background-color:gray;
+    border: none;
+    outline: none;
+}
+.time{
+    height: 20px;
+    width: auto;
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+.message1{
+    right: 0px;
+    
+}
+.footer{
+    bottom: 0;
+    width: 100%;
+
+}
+
+.messages{
+    margin-bottom: 30px;
+    overflow-y: auto;
+}

@@ -1,0 +1,27 @@
+.avatar{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    
+    background-color: white;
+}
+.avatar-small{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+}
+
+.message-image{
+    width:75px;
+    height: 75px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.user-img-big{
+    width:300px;
+    height: 300px;
+    margin: 5px 5px 5px 5px;
+    border:2px solid white;
+}

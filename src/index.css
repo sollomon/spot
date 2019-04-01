@@ -1,3 +1,10 @@
+@import url(css/header.css);
+@import url(css/image.css);
+@import url(css/grid.css);
+@import url(css/form.css);
+@import url(css/button.css);
+@import url(css/chatRoom.css);
+
 body {
   margin: 0;
   padding: 0;
@@ -12,3 +19,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+

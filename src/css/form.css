@@ -1,0 +1,24 @@
+form{
+    align-items: center;
+}
+
+form button{
+    border:none;
+    height: 30px;
+    min-width: 100px;
+    color:white;
+    background-color:#795548;
+    border-radius: 3px;
+}
+form button:hover{
+    color: black;
+}
+form input{
+    display: block;
+    border:none;
+    margin-top: 10px;
+    height: 30px;
+    min-width: 400px;
+    border-radius: 3px;
+    padding-left: 10px;
+}

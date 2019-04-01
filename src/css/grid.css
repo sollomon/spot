@@ -1,0 +1,39 @@
+.chat{
+    display: flex;
+    flex-direction: row;
+}
+
+.home{
+    display: flex;
+}
+
+.engaged-chats{
+    flex-grow: 1;
+    border:2px solid black;
+}
+.messages{
+    flex-grow: 2;
+    border:2px solid black;
+}
+.chat-ads{
+    flex-grow: 1;
+    border:2px solid black;
+}
+
+.contacts{
+    flex-grow: 2;
+    border:2px solid black;
+}
+.shopping{
+    flex-grow: 5;
+    position: relative;
+    border:2px solid black;
+}
+.work{
+    flex-grow: 3;
+    border:2px solid black;
+}
+.ads{
+    flex-grow: 2;
+    border:2px solid black;
+}

@@ -1,0 +1,44 @@
+.chat-room{
+    height: auto;
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: auto;
+    padding-top: 60px;
+    transition: 0.5s;
+    display: block;
+}
+
+.sticky{
+    position: sticky;
+    top: 0;
+}
+
+.chat-container{
+    position: relative;
+}
+
+.send-message button{
+    border:none;
+    height: 30px;
+    min-width: 100px;
+    color:white;
+    background-color:#795548;
+    border-radius: 3px;
+    right: 0;
+}
+.send-message button:hover{
+    color: black;
+}
+.send-message input{
+    flex-grow: 1;
+    border:none;
+    margin-top: 10px;
+    height: 30px;
+    min-width: 400px;
+    border-radius: 3px;
+    padding-left: 10px;
+}
