@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'preact';
 import {connect} from 'react-redux';
 import { compose} from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
-import {NavLink} from 'react-router-dom';
 
 class Contacts extends Component {
     handleClick(){
@@ -10,7 +9,6 @@ class Contacts extends Component {
     }
     render() {
         const {users,auth} = this.props;
-        console.log(users)
         return (
             <div>
                 {users && users.filter(user => user.id !== auth.uid).map(user=>{

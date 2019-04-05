@@ -36,3 +36,14 @@ header input{
     flex-grow: 1;
     overflow: hidden;
 }
+.links-mobile{
+    display: none;
+}
+@media (max-width:768){
+    .links{
+        display: none;
+    }
+    .links{
+        display: inline-block;
+    }
+}

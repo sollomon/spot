@@ -10,6 +10,40 @@ export const helloWorld = functions.https.onRequest((request, response) => {
   response.send("Hello from Firebase!");
 });
 
+export const attachArticleToBlog = functions.firestore.document('articles/{article}').onCreate((snapshot,context)=>{
+  const articleData = snapshot.data()!;
+  const articleId = snapshot.id;
+  const blogId = articleData.blogId;
+  return admin.firestore().collection("shops").doc(blogId).update({articles:admin.firestore.FieldValue.arrayUnion(articleId)})
+  
+})
+
+export const attachGoodToShop = functions.firestore.document('goods/{good}').onCreate((snapshot,context)=>{
+  const goodData = snapshot.data()!;
+  const goodId = snapshot.id;
+  const shopId = goodData.shopId;
+  return admin.firestore().collection("shops").doc(shopId).update({goods:admin.firestore.FieldValue.arrayUnion(goodId)})
+})
+
+export const createShopAdmin = functions.firestore.document('shops/{shop}').onCreate((snapshot,context)=>{
+  const shopData = snapshot.data()!;
+  const shopId = snapshot.id;
+  const creatorId = shopData.createdBy;
+  return admin.firestore().collection("work").add({
+    title:"ADMIN",
+    description:"CREATOR",
+    shopId:shopId,
+    userId:creatorId
+
+  }).then((results)=>{
+    const workId = results.id;
+    const p1 = admin.firestore().collection("shops").doc(shopId).collection("workers").doc(creatorId).set({workId:workId})
+    const p2 = admin.firestore().collection("users").doc(creatorId).collection("jobs").doc(workId).set({status:true})
+    return Promise.all([p1, p2])
+  })
+  
+})
+
 export const nameToUpperCase = functions.firestore.document('users/{user}').onCreate((snapshot,context)=>{
     const userdata = snapshot.data()!;
     const userId = snapshot.id;

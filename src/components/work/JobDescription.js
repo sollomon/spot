@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'preact';
 import {connect} from 'react-redux';
 import { compose} from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
@@ -6,6 +6,7 @@ import ShopDetails from '../shop/ShopDetails';
 import {Redirect} from 'react-router-dom';
 
 class JobDescription extends Component {
+    
     render() {
         const {job, auth} = this.props;
         if(!auth.uid) return <Redirect to="/login"/> 
@@ -13,8 +14,10 @@ class JobDescription extends Component {
             return (
                 <div>
                     {job.description}
-                    <div>{job.shop.name}</div>
-                    <ShopDetails shopId={job.shopId}/>
+                    {job.title}
+                    
+                    <ShopDetails title={job.title} shopId={job.shopId}/>
+
                 </div>
             );
         }else{
@@ -26,12 +29,8 @@ class JobDescription extends Component {
 }
 
 const mapStateToProps = (state, ownProps)=>{
-    console.log(state)
     const jobId = ownProps.match.params.jobId;
-    console.log(jobId)
     const work = state.firestore.ordered.work;
-    console.log(work)
-    //const job = work ? work[jobId] : null
     const job = work ? work.find(x=> x.id === jobId) : null;
     return {
         auth:state.firebase.auth,

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from 'preact';
 import { Redirect } from 'react-router-dom'
 import {connect} from 'react-redux';
 import { compose} from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
-import Contacts from '../user/Contacts';
 import firebase from '../../config/fbConfig';
 import Messages from '../chat/Messages';
 import Work from '../work/Work';
 import Shopping from '../shopping/Shopping';
+import Article from '../article/Article';
 
 
 class DashBoard extends Component {
@@ -16,6 +16,7 @@ class DashBoard extends Component {
         this.state={
             channelId:null,
             otherUserId:null,
+            main:<Shopping/>
         }
     }
     
@@ -81,7 +82,8 @@ class DashBoard extends Component {
                 <span className="shopping">
                     {this.state.channelId ? <Messages otherUserId={this.state.otherUserId} channelId={this.state.channelId}/> : null}
                     <div>
-                        <Shopping/>
+                        <button onClick={e=>this.setState({main:<Article/>})}>blogs</button><button onClick={e=>this.setState({main:<Shopping/>})}>shopping</button>
+                        {this.state.main}
                     </div>
                 </span>
                 <span className="work">

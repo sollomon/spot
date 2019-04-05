@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'preact';
 import {connect} from 'react-redux';
 import { compose} from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
+import Good from '../shop/Good';
 
 class Shopping extends Component {
     render() {
@@ -9,8 +10,10 @@ class Shopping extends Component {
         return (
             <div>
                 {goods && goods.map(good=>{
-                    return <div>{good.name}</div>
+                    return <Good key={good.id} good={good}/>
                 })}
+                
+
             </div>
         );
     }

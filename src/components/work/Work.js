@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'preact';
 import {connect} from 'react-redux';
 import { compose} from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
-import firebase from '../../config/fbConfig';
 import {NavLink} from 'react-router-dom';
 
 class Work extends Component {
@@ -48,7 +47,7 @@ class Work extends Component {
             <div>
                 {work && work.map(job=>{
                     return(
-                        <NavLink to={`/jobs/${job.id}`} key={job.id}>{job.description} {job.shop.name}</NavLink>
+                       <div key={job.id}> <NavLink to={`/jobs/${job.id}`} >{job.description}</NavLink><br/></div>
                     )
                 })}
             </div>
@@ -57,7 +56,6 @@ class Work extends Component {
 }
 
 const mapStateToProps = (state)=>{
-    console.log(state)
     return {
         auth:state.firebase.auth,
         work:state.firestore.ordered.work

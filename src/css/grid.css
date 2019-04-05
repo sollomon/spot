@@ -9,31 +9,45 @@
 
 .engaged-chats{
     flex-grow: 1;
-    border:2px solid black;
 }
 .messages{
     flex-grow: 2;
-    border:2px solid black;
 }
 .chat-ads{
     flex-grow: 1;
-    border:2px solid black;
 }
 
 .contacts{
     flex-grow: 2;
-    border:2px solid black;
 }
 .shopping{
     flex-grow: 5;
     position: relative;
-    border:2px solid black;
 }
 .work{
     flex-grow: 3;
-    border:2px solid black;
+    display: inline;
 }
 .ads{
     flex-grow: 2;
-    border:2px solid black;
+}
+
+@media screen and (max-width:768px){
+    .home{
+        display: flex;
+        flex-direction: column;
+    }
+    .contacts{
+        display: none;
+        border: none;
+    }
+    .shopping{
+        border: none;
+    }.work{
+        border: none;
+        display: list-item;
+    }
+    .ads{
+        border: none;
+    }
 }

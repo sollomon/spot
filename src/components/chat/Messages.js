@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'preact';
 import firebase from '../../config/fbConfig';
 import {getOrCreateChatChannel} from '../store/actions/chatActions';
 import {createMessage} from '../store/actions/messageActions';
@@ -28,7 +28,7 @@ class Messages extends Component {
     }
     handleSendMessage(){
         const {channelId, auth, profile, otherUserId}= this.props;
-        this.props.createMessage(channelId,{
+        firebase.firestore().collection("chatChannels").doc(channelId).collection("messages").add({
             recipientId:otherUserId,
             senderfName:profile.firstName,
             senderlName:profile.lastName,
@@ -38,12 +38,24 @@ class Messages extends Component {
             type:"TEXT"
         })
     }
+    /*handleSendMessage(){
+        const {channelId, auth, profile, otherUserId}= this.props;
+        this.props.createMessage(channelId,{
+            recipientId:otherUserId,
+            senderfName:profile.firstName,
+            senderlName:profile.lastName,
+            senderId:auth.uid,
+            text:this.state.messageToSend,
+            time:new Date().getTime(),
+            type:"TEXT"
+        })
+    }*/
     closeSlide(){
         document.getElementById("chat-room").style.width = "0";
     }
     render() {
         const {messages} = this.state;
-        const {auth} = this.props;
+        //const {auth} = this.props;
         return (
             <div className="chat-room" id="chat-room">
             <button onClick={e=>this.closeSlide()}>close</button>
@@ -72,7 +84,6 @@ class Messages extends Component {
 }
 
 const mapStateToProps = (state)=>{
-    console.log(state)
     return{
         auth:state.firebase.auth,
         id:state.chat.id,

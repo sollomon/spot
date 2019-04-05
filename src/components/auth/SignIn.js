@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'preact';
 import {connect} from 'react-redux'
 import {signIn} from '../store/actions/authActions';
 import { Redirect } from 'react-router-dom'

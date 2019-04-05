@@ -5,6 +5,7 @@ import authReducer from './authReducer';
 import chatReducer from './chatReducer';
 import messageReducer from './messageReducer';
 import jobReducer from './jobReducer';
+import blogReducer from './blogReducers';
 
 const rootReducer = combineReducers({
     firestore:firestoreReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
     chat:chatReducer,
     message:messageReducer,
     shop:jobReducer,
+    blog:blogReducer
 });
 
 export default rootReducer;

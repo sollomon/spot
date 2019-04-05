@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'preact';
 import { NavLink } from 'react-router-dom';
 
 class SignedOutLinks extends Component {

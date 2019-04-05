@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'preact';
 import {connect} from 'react-redux';
 import {uploadProfile} from '../store/actions/userActions';
 import { Redirect } from 'react-router-dom'
@@ -33,7 +33,6 @@ class Profile extends Component {
 }
 
 const mapStateToProps = (state)=>{
-    console.log(state);
     return{
       profile:state.firebase.profile,
       auth:state.firebase.auth

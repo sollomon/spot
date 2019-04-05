@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import Messages from './Messages';
+import React, { Component } from 'preact';
 import {connect } from 'react-redux';
 import {compose} from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
@@ -67,7 +66,6 @@ class Chat extends Component {
 }
 
 const mapStateToProps = (state)=>{
-    console.log(state);
     return{
         auth:state.firebase.auth,
         users:state.firestore.ordered.users

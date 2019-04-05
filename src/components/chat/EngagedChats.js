@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'preact';
 import {connect } from 'react-redux';
 import {compose} from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import {getOrCreateChatChannel} from '../store/actions/chatActions';
-import {NavLink, withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 class EngagedChats1 extends Component {
     constructor(props) {
@@ -33,7 +33,6 @@ class EngagedChats1 extends Component {
 }
 
 const mapStateToProps = (state)=>{
-    console.log(state);
     return{
         auth:state.firebase.auth,
         users:state.firestore.ordered.users

@@ -1,0 +1,36 @@
+[debug] [2019-04-05T07:20:07.845Z] ----------------------------------------------------------------------
+[debug] [2019-04-05T07:20:07.849Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy --except functions
+[debug] [2019-04-05T07:20:07.849Z] CLI Version:   6.3.1
+[debug] [2019-04-05T07:20:07.849Z] Platform:      linux
+[debug] [2019-04-05T07:20:07.849Z] Node Version:  v8.10.0
+[debug] [2019-04-05T07:20:07.849Z] Time:          Fri Apr 05 2019 10:20:07 GMT+0300 (EAT)
+[debug] [2019-04-05T07:20:07.849Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-04-05T07:20:07.862Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-05T07:20:07.863Z] > authorizing via signed-in user
+[debug] [2019-04-05T07:20:07.863Z] [iam] checking project spot-e6c81 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-04-05T07:20:07.866Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/spot-e6c81:testIamPermissions  
+
+[debug] [2019-04-05T07:20:22.231Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-05T07:20:22.235Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/spot-e6c81  
+ 
+[debug] [2019-04-05T07:20:40.960Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'spot-e6c81'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-04-05T07:21:00.499Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/spot-e6c81/versions  
+
+[debug] [2019-04-05T07:21:37.567Z] Error: tunneling socket could not be established, statusCode=503
+    at ClientRequest.onConnect (/usr/local/lib/node_modules/firebase-tools/node_modules/tunnel-agent/index.js:166:19)
+    at Object.onceWrapper (events.js:319:30)
+    at emitThree (events.js:136:13)
+    at ClientRequest.emit (events.js:217:7)
+    at Socket.socketOnData (_http_client.js:472:11)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+[error] 
+[error] Error: Server Error. tunneling socket could not be established, statusCode=503

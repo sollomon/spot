@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'preact';
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 import {connect} from 'react-redux';
@@ -16,7 +16,6 @@ class Header extends Component {
 }
 
 const mapStateToProps = (state)=>{
-  console.log(state);
   return{
     auth:state.firebase.auth
   }

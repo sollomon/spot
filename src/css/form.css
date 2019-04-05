@@ -22,3 +22,11 @@ form input{
     border-radius: 3px;
     padding-left: 10px;
 }
+
+.search{
+    width:200px;
+}
+
+.search:focus{
+    width:500px;
+}
